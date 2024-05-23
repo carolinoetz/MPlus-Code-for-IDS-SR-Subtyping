@@ -1,0 +1,26 @@
+!See in ** the specific code that was added to the base LCA model presented in Base_LCA GitHub File
+
+TITLE: Latent class analysis, a dicotomous approach, on 14 IDS-SR items.
+
+  DATA: file = data.txt;
+
+  VARIABLE:
+  NAMES ARE !same as Base_LCA input file
+  USEVARIABLES ARE !same as Base_LCA input file
+
+  MISSING ARE ALL (-99);
+  IDVARIABLE IS id;
+  CATEGORICAL ARE ALL ;
+  CLASSES = c(4);
+
+  ANALYSIS:
+      TYPE = MIXTURE;
+      PROCESSORS = 6(STARTS);
+      STARTS = 500 50;
+      *PARAMETERIZATION = RESCOVARIANCES;*
+
+  MODEL:
+  %OVERALL%
+  *AppInc WITH WeiInc;* !adding the residual correlation into the LCA model 
+
+  OUTPUT: TECH10 TECH11 TECH14; 
