@@ -1,0 +1,228 @@
+  DATA: file = data.txt;
+  VARIABLE: 
+  NAMES ARE !same as previous input files
+  USEVARIABLES ARE
+mood_0 insom_0 hyper_0 AppDec_0 AppInc_0 WeiDec_0 WeiInc_0 concet_0 guilt_0 suici_0 inte_0   ener_0 RetPsy_0 AgiPsy_0
+
+mood_6 insom_6 hyper_6 AppDec_6 AppInc_6 WeiDec_6 WeiInc_6 concet_6 guilt_6 suici_6 inte_6   ener_6 RetPsy_6 AgiPsy_6
+
+mood_12 insom_12 hyper_12 ApDec_12   ApInc_12 WeDec_12 WeInc_12 conct_12 guilt_12 suici_12 inte_12 ener_12 RetPy_12 AgiPy_12;
+ 
+  MISSING ARE ALL (-99);
+  IDVARIABLE IS id_R;
+  CATEGORICAL ARE ALL; 
+  CLASSES = c1 (4) c2 (4) c3 (4);
+
+  ANALYSIS:
+      TYPE = MIXTURE;
+      ESTIMATOR = ML;
+      PROCESSORS = 6(STARTS);
+      STARTS = 500 50;
+      stiterations = 50;
+
+  MODEL:
+  %OVERALL%
+  C2 ON C1;  
+  C3 on C2; 
+
+  ! For the model we are constraining the CRPs to be time-invariant
+  !Time 1 measurement model
+  Model C1:
+               %C1#1%
+              [mood_0$1] (1);
+              [insom_0$1] (2);
+              [hyper_0$1] (3);
+              [AppDec_0$1] (4);
+              [AppInc_0$1] (5);
+              [WeiDec_0$1] (6);
+              [WeiInc_0$1] (7);
+              [concet_0$1] (8);
+              [guilt_0$1] (9);
+              [suici_0$1] (10);
+              [inte_0$1] (11);
+              [ener_0$1] (12);
+              [RetPsy_0$1] (13);
+              [AgiPsy_0$1] (14);
+
+               %C1#2%
+              [mood_0$1] (15);
+              [insom_0$1] (16);
+              [hyper_0$1] (17);
+              [AppDec_0$1] (18);
+              [AppInc_0$1] (19);
+              [WeiDec_0$1] (20);
+              [WeiInc_0$1] (21);
+              [concet_0$1] (22);
+              [guilt_0$1] (23);
+              [suici_0$1] (24);
+              [inte_0$1] (25);
+              [ener_0$1] (26);
+              [RetPsy_0$1] (27);
+              [AgiPsy_0$1] (28);
+
+               %C1#3%
+              [mood_0$1] (29);
+              [insom_0$1] (30);
+              [hyper_0$1] (31);
+              [AppDec_0$1] (32);
+              [AppInc_0$1] (33);
+              [WeiDec_0$1] (34);
+              [WeiInc_0$1] (35);
+              [concet_0$1] (36);
+              [guilt_0$1] (37);
+              [suici_0$1] (38);
+              [inte_0$1] (39);
+              [ener_0$1] (40);
+              [RetPsy_0$1] (41);
+              [AgiPsy_0$1] (42);
+
+               %C1#4%
+              [mood_0$1] (43);
+              [insom_0$1] (44);
+              [hyper_0$1] (45);
+              [AppDec_0$1] (46);
+              [AppInc_0$1] (47);
+              [WeiDec_0$1] (48);
+              [WeiInc_0$1] (49);
+              [concet_0$1] (50);
+              [guilt_0$1] (51);
+              [suici_0$1] (52);
+              [inte_0$1] (53);
+              [ener_0$1] (54);
+              [RetPsy_0$1] (55);
+              [AgiPsy_0$1] (56);
+
+  ! Time-2 measurement model
+  MODEL C2:
+               %C2#1%
+              [mood_6$1] (1);
+              [insom_6$1] (2);
+              [hyper_6$1] (3);
+              [AppDec_6$1] (4);
+              [AppInc_6$1] (5);
+              [WeiDec_6$1] (6);
+              [WeiInc_6$1] (7);
+              [concet_6$1] (8);
+              [guilt_6$1] (9);
+              [suici_6$1] (10);
+              [inte_6$1] (11);
+              [ener_6$1] (12);
+              [RetPsy_6$1] (13);
+              [AgiPsy_6$1] (14);
+
+               %C2#2%
+              [mood_6$1] (15);
+              [insom_6$1] (16);
+              [hyper_6$1] (17);
+              [AppDec_6$1] (18);
+              [AppInc_6$1] (19);
+              [WeiDec_6$1] (20);
+              [WeiInc_6$1] (21);
+              [concet_6$1] (22);
+              [guilt_6$1] (23);
+              [suici_6$1] (24);
+              [inte_6$1] (25);
+              [ener_6$1] (26);
+              [RetPsy_6$1] (27);
+              [AgiPsy_6$1] (28);
+
+               %C2#3%
+              [mood_6$1] (29);
+              [insom_6$1] (30);
+              [hyper_6$1] (31);
+              [AppDec_6$1] (32);
+              [AppInc_6$1] (33);
+              [WeiDec_6$1] (34);
+              [WeiInc_6$1] (35);
+              [concet_6$1] (36);
+              [guilt_6$1] (37);
+              [suici_6$1] (38);
+              [inte_6$1] (39);
+              [ener_6$1] (40);
+              [RetPsy_6$1] (41);
+              [AgiPsy_6$1] (42);
+
+               %C2#4%
+              [mood_6$1] (43);
+              [insom_6$1] (44);
+              [hyper_6$1] (45);
+              [AppDec_6$1] (46);
+              [AppInc_6$1] (47);
+              [WeiDec_6$1] (48);
+              [WeiInc_6$1] (49);
+              [concet_6$1] (50);
+              [guilt_6$1] (51);
+              [suici_6$1] (52);
+              [inte_6$1] (53);
+              [ener_6$1] (54);
+              [RetPsy_6$1] (55);
+              [AgiPsy_6$1] (56);
+
+  ! Time-3 measurement model
+  MODEL C3:
+               %C3#1%
+              [mood_12$1] (1);
+              [insom_12$1] (2);
+              [hyper_12$1] (3);
+              [ApDec_12$1] (4);
+              [ApInc_12$1] (5);
+              [WeDec_12$1] (6);
+              [WeInc_12$1] (7);
+              [conct_12$1] (8);
+              [guilt_12$1] (9);
+              [suici_12$1] (10);
+              [inte_12$1] (11);
+              [ener_12$1] (12);
+              [RetPy_12$1] (13);
+              [AgiPy_12$1] (14);
+
+               %C3#2%
+              [mood_12$1] (15);
+              [insom_12$1] (16);
+              [hyper_12$1] (17);
+              [ApDec_12$1] (18);
+              [ApInc_12$1] (19);
+              [WeDec_12$1] (20);
+              [WeInc_12$1] (21);
+              [conct_12$1] (22);
+              [guilt_12$1] (23);
+              [suici_12$1] (24);
+              [inte_12$1] (25);
+              [ener_12$1] (26);
+              [RetPy_12$1] (27);
+              [AgiPy_12$1] (28);
+
+               %C3#3%
+              [mood_12$1] (29);
+              [insom_12$1] (30);
+              [hyper_12$1] (31);
+              [ApDec_12$1] (32);
+              [ApInc_12$1] (33);
+              [WeDec_12$1] (34);
+              [WeInc_12$1] (35);
+              [conct_12$1] (36);
+              [guilt_12$1] (37);
+              [suici_12$1] (38);
+              [inte_12$1] (39);
+              [ener_12$1] (40);
+              [RetPy_12$1] (41);
+              [AgiPy_12$1] (42);
+
+               %C3#4%
+              [mood_12$1] (43);
+              [insom_12$1] (44);
+              [hyper_12$1] (45);
+              [ApDec_12$1] (46);
+              [ApInc_12$1] (47);
+              [WeDec_12$1] (48);
+              [WeInc_12$1] (49);
+              [conct_12$1] (50);
+              [guilt_12$1] (51);
+              [suici_12$1] (52);
+              [inte_12$1] (53);
+              [ener_12$1] (54);
+              [RetPy_12$1] (55);
+              [AgiPy_12$1] (56);
+
+  OUTPUT:  TECH10 SVALUES TECH15;
+
