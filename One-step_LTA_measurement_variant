@@ -1,0 +1,222 @@
+DATA: file = data.txt;
+
+VARIABLE: 
+NAMES ARE !same as before
+USEVARIABLES ARE !same as before
+
+MISSING ARE ALL (-99);
+IDVARIABLE IS id_R;
+CATEGORICAL ARE ALL;
+
+CLASSES = c1 (4) c2 (4) c3 (4);
+
+ANALYSIS: 
+    TYPE = MIXTURE;
+    ESTIMATOR = ML;
+    PROCESSORS = 6(STARTS);
+    STARTS = 500 50;
+    stiterations = 50;
+
+MODEL: 
+! Here we are not restricting the CRPs but allowing them to freely vary over time
+Model C1:   
+             %C1#1%   
+            [mood_0$1 ] ;  
+            [insom_0$1 ] ;  
+            [hyper_0$1 ] ;  
+            [AppDec_0$1 ] ;  
+            [AppInc_0$1 ] ;  
+            [WeiDec_0$1 ] ;  
+            [WeiInc_0$1 ] ;  
+            [concet_0$1 ] ;  
+            [guilt_0$1 ] ;  
+            [suici_0$1 ] ;  
+            [inte_0$1 ] ;  
+            [ener_0$1 ] ;  
+            [RetPsy_0$1 ] ;  
+            [AgiPsy_0$1 ] ;  
+
+             %C1#2%     
+            [mood_0$1 ] ;  
+            [insom_0$1 ] ;  
+            [hyper_0$1 ] ;  
+            [AppDec_0$1 ] ;  
+            [AppInc_0$1 ] ;  
+            [WeiDec_0$1 ] ;  
+            [WeiInc_0$1 ] ;  
+            [concet_0$1 ] ;  
+            [guilt_0$1 ] ;  
+            [suici_0$1 ] ;  
+            [inte_0$1 ] ;  
+            [ener_0$1 ] ;  
+            [RetPsy_0$1 ] ;  
+            [AgiPsy_0$1 ] ;  
+
+             %C1#3%     
+            [mood_0$1 ] ;  
+            [insom_0$1 ] ;  
+            [hyper_0$1 ] ;  
+            [AppDec_0$1 ] ;  
+            [AppInc_0$1 ] ;  
+            [WeiDec_0$1 ] ;  
+            [WeiInc_0$1 ] ;  
+            [concet_0$1 ] ;  
+            [guilt_0$1 ] ;  
+            [suici_0$1 ] ;  
+            [inte_0$1 ] ;  
+            [ener_0$1 ] ;  
+            [RetPsy_0$1 ] ;  
+            [AgiPsy_0$1 ] ;  
+
+             %C1#4%     
+            [mood_0$1 ] ;  
+            [insom_0$1 ] ;  
+            [hyper_0$1 ] ;  
+            [AppDec_0$1 ] ;  
+            [AppInc_0$1 ] ;  
+            [WeiDec_0$1 ] ;  
+            [WeiInc_0$1 ] ;  
+            [concet_0$1 ] ;  
+            [guilt_0$1 ] ;  
+            [suici_0$1 ] ;  
+            [inte_0$1 ] ;  
+            [ener_0$1 ] ;  
+            [RetPsy_0$1 ] ;  
+            [AgiPsy_0$1 ] ;  
+
+! Time-2 measurement model         
+MODEL C2:    
+             %C2#1%
+            [mood_6$1 ] ;  
+            [insom_6$1 ] ;  
+            [hyper_6$1 ] ;  
+            [AppDec_6$1 ] ;  
+            [AppInc_6$1 ] ;  
+            [WeiDec_6$1 ] ;  
+            [WeiInc_6$1 ] ;  
+            [concet_6$1 ] ;  
+            [guilt_6$1 ] ;  
+            [suici_6$1 ] ;  
+            [inte_6$1 ] ;  
+            [ener_6$1 ] ;  
+            [RetPsy_6$1 ] ;  
+            [AgiPsy_6$1 ] ;  
+
+             %C2#2%   
+            [mood_6$1 ] ;  
+            [insom_6$1 ] ;  
+            [hyper_6$1 ] ;  
+            [AppDec_6$1 ] ;  
+            [AppInc_6$1 ] ;  
+            [WeiDec_6$1 ] ;  
+            [WeiInc_6$1 ] ;  
+            [concet_6$1 ] ;  
+            [guilt_6$1 ] ;  
+            [suici_6$1 ] ;  
+            [inte_6$1 ] ;  
+            [ener_6$1 ] ;  
+            [RetPsy_6$1 ] ;  
+            [AgiPsy_6$1 ] ;  
+
+             %C2#3%  
+            [mood_6$1 ] ;  
+            [insom_6$1 ] ;  
+            [hyper_6$1 ] ;  
+            [AppDec_6$1 ] ;  
+            [AppInc_6$1 ] ;  
+            [WeiDec_6$1 ] ;  
+            [WeiInc_6$1 ] ;  
+            [concet_6$1 ] ;  
+            [guilt_6$1 ] ;  
+            [suici_6$1 ] ;  
+            [inte_6$1 ] ;  
+            [ener_6$1 ] ;  
+            [RetPsy_6$1 ] ;  
+            [AgiPsy_6$1 ] ;  
+
+             %C2#4%  
+            [mood_6$1 ] ;  
+            [insom_6$1 ] ;  
+            [hyper_6$1 ] ;  
+            [AppDec_6$1 ] ;  
+            [AppInc_6$1 ] ;  
+            [WeiDec_6$1 ] ;  
+            [WeiInc_6$1 ] ;  
+            [concet_6$1 ] ;  
+            [guilt_6$1 ] ;  
+            [suici_6$1 ] ;  
+            [inte_6$1 ] ;  
+            [ener_6$1 ] ;  
+            [RetPsy_6$1 ] ;  
+            [AgiPsy_6$1 ] ;  
+
+! Time-3 measurement model             
+MODEL C3:  
+             %C3#1%  
+            [mood_12$1 ] ;  
+            [insom_12$1 ] ;  
+            [hyper_12$1 ] ;  
+            [ApDec_12$1 ] ;  
+            [ApInc_12$1 ] ;  
+            [WeDec_12$1 ] ;  
+            [WeInc_12$1 ] ;  
+            [conct_12$1 ] ;  
+            [guilt_12$1 ] ;  
+            [suici_12$1 ] ;  
+            [inte_12$1 ] ;  
+            [ener_12$1 ] ;  
+            [RetPy_12$1 ] ;  
+            [AgiPy_12$1 ] ;  
+
+             %C3#2%   
+            [mood_12$1 ] ;  
+            [insom_12$1 ] ;  
+            [hyper_12$1 ] ;  
+            [ApDec_12$1 ] ;  
+            [ApInc_12$1 ] ;  
+            [WeDec_12$1 ] ;  
+            [WeInc_12$1 ] ;  
+            [conct_12$1 ] ;  
+            [guilt_12$1 ] ;  
+            [suici_12$1 ] ;  
+            [inte_12$1 ] ;  
+            [ener_12$1 ] ;  
+            [RetPy_12$1 ] ;  
+            [AgiPy_12$1 ] ;  
+
+             %C3#3%  
+            [mood_12$1 ] ;  
+            [insom_12$1 ] ;  
+            [hyper_12$1 ] ;  
+            [ApDec_12$1 ] ;  
+            [ApInc_12$1 ] ;  
+            [WeDec_12$1 ] ;  
+            [WeInc_12$1 ] ;  
+            [conct_12$1 ] ;  
+            [guilt_12$1 ] ;  
+            [suici_12$1 ] ;  
+            [inte_12$1 ] ;  
+            [ener_12$1 ] ;  
+            [RetPy_12$1 ] ;  
+            [AgiPy_12$1 ] ;  
+
+             %C3#4%  
+            [mood_12$1 ] ;  
+            [insom_12$1 ] ;  
+            [hyper_12$1 ] ;  
+            [ApDec_12$1 ] ;  
+            [ApInc_12$1 ] ;  
+            [WeDec_12$1 ] ;  
+            [WeInc_12$1 ] ;  
+            [conct_12$1 ] ;  
+            [guilt_12$1 ] ;  
+            [suici_12$1 ] ;  
+            [inte_12$1 ] ;  
+            [ener_12$1 ] ;  
+            [RetPy_12$1 ] ;  
+            [AgiPy_12$1 ] ;  
+
+
+OUTPUT:  TECH10 SVALUES TECH15;
+
+
