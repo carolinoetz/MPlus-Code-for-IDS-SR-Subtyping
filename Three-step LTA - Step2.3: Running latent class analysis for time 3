@@ -1,0 +1,105 @@
+DATA: file = c2.dat;
+
+VARIABLE: 
+NAMES ARE !as listed on the C2 data output
+
+USEVARIABLES ARE 
+mood_12 insom_12 hyper_12 ApDec_12   ApInc_12 WeDec_12 WeInc_12 conct_12 guilt_12 suici_12 inte_12 ener_12 RetPy_12 AgiPy_12 ;
+
+MISSING = *;
+IDVARIABLE IS id_R;
+CATEGORICAL ARE ALL; 
+AUXILIARY =          
+      id_R gender AgeCon fam_De phy_co mh_co cm_co comor trauma SSRI SNRI antipsy mirta
+
+mood_0 insom_0 hyper_0 AppDec_0 AppInc_0 WeiDec_0 WeiInc_0 concet_0 guilt_0 suici_0 inte_0   ener_0 RetPsy_0 AgiPsy_0
+
+mood_6 insom_6 hyper_6 AppDec_6 AppInc_6 WeiDec_6 WeiInc_6 concet_6 guilt_6 suici_6 inte_6   ener_6 RetPsy_6 AgiPsy_6
+
+      N1 N2; !the most likely latent class variables for baseline and 6-months respectively 
+
+CLASSES = c3 (4);
+
+ANALYSIS: 
+    TYPE = MIXTURE;
+    ESTIMATOR = ML;
+    PROCESSORS = 6(STARTS);
+    STARTS = 0;
+
+MODEL: 
+%OVERALL%
+     [ c3#1*-1.28568 ];
+     [ c3#2*-1.29805 ];
+     [ c3#3*-0.38302 ];
+
+        %C3#1%
+
+     [ mood_12$1@-2.55535 ] (1);
+     [ insom_12$1@-0.68640 ] (2);
+     [ hyper_12$1@1.11594 ] (3);
+     [ apdec_12$1@0.05913 ] (4);
+     [ apinc_12$1@4.61973 ] (5);
+     [ wedec_12$1@0.79318 ] (6);
+     [ weinc_12$1@3.41517 ] (7);
+     [ conct_12$1@-2.85268 ] (8);
+     [ guilt_12$1@-1.67603 ] (9);
+     [ suici_12$1@0.38705 ] (10);
+     [ inte_12$1@-1.47660 ] (11);
+     [ ener_12$1@-2.61592 ] (12);
+     [ retpy_12$1@-1.21126 ] (13);
+     [ agipy_12$1@-0.16275 ] (14);
+
+     %C3#2%
+
+     [ mood_12$1@-1.62797 ] (15);
+     [ insom_12$1@0.28860 ] (16);
+     [ hyper_12$1@1.04752 ] (17);
+     [ apdec_12$1@15 ] (18);
+     [ apinc_12$1@-0.00618 ] (19);
+     [ wedec_12$1@15 ] (20);
+     [ weinc_12$1@-0.08286 ] (21);
+     [ conct_12$1@-2.13936 ] (22);
+     [ guilt_12$1@-1.12433 ] (23);
+     [ suici_12$1@0.57072 ] (24);
+     [ inte_12$1@-1.04626 ] (25);
+     [ ener_12$1@-2.79563 ] (26);
+     [ retpy_12$1@-0.06711 ] (27);
+     [ agipy_12$1@1.02922 ] (28);
+
+     %C3#3%
+
+     [ mood_12$1@-0.05354 ] (29);
+     [ insom_12$1@0.22487 ] (30);
+     [ hyper_12$1@1.62210 ] (31);
+     [ apdec_12$1@2.46049 ] (32);
+     [ apinc_12$1@2.15137 ] (33);
+     [ wedec_12$1@1.93482 ] (34);
+     [ weinc_12$1@2.32699 ] (35);
+     [ conct_12$1@0.31860 ] (36);
+     [ guilt_12$1@0.14103 ] (37);
+     [ suici_12$1@1.48635 ] (38);
+     [ inte_12$1@0.98790 ] (39);
+     [ ener_12$1@-0.15068 ] (40);
+     [ retpy_12$1@1.39028 ] (41);
+     [ agipy_12$1@1.30829 ] (42);
+
+     %C3#4%
+
+     [ mood_12$1@3.40584 ] (43);
+     [ insom_12$1@1.02397 ] (44);
+     [ hyper_12$1@3.27183 ] (45);
+     [ apdec_12$1@4.97601 ] (46);
+     [ apinc_12$1@2.47714 ] (47);
+     [ wedec_12$1@2.31509 ] (48);
+     [ weinc_12$1@2.23308 ] (49);
+     [ conct_12$1@2.80897 ] (50);
+     [ guilt_12$1@2.24135 ] (51);
+     [ suici_12$1@3.46137 ] (52);
+     [ inte_12$1@4.04472 ] (53);
+     [ ener_12$1@2.39671 ] (54);
+     [ retpy_12$1@3.22185 ] (55);
+     [ agipy_12$1@2.43639 ] (56);
+
+SAVEDATA: file = c3.dat; save=cprob;
+
+
