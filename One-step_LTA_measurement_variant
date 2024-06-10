@@ -18,6 +18,10 @@ ANALYSIS:
     stiterations = 50;
 
 MODEL: 
+  %OVERALL%
+  C2 ON C1;  
+  C3 on C2; 
+
 ! Here we are not restricting the CRPs but allowing them to freely vary over time
 Model C1:   
              %C1#1%   
