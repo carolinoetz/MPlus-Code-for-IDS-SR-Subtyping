@@ -10,7 +10,7 @@ MISSING = *;
 IDVARIABLE IS id_R;
 CATEGORICAL ARE ALL; 
 AUXILIARY =          
-      id_R gender AgeCon fam_De phy_co mh_co cm_co comor trauma SSRI SNRI antipsy mirta
+      id_R gender 
 
 mood_0 insom_0 hyper_0 AppDec_0 AppInc_0 WeiDec_0 WeiInc_0 concet_0 guilt_0 suici_0 inte_0   ener_0 RetPsy_0 AgiPsy_0
 
