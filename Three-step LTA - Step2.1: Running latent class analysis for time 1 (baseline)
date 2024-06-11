@@ -11,7 +11,7 @@ IDVARIABLE IS id_R;
 CATEGORICAL ARE ALL; 
 
 AUXILIARY =   !defines variables that aren’t used in this analysis but will be included in the resulting “!save data” set. 
-       id_R gender AgeCon fam_De phy_co mh_co cm_co comor trauma SSRI SNRI antipsy mirta
+       id_R gender 
 mood_6 insom_6 hyper_6 AppDec_6 AppInc_6 WeiDec_6 WeiInc_6 concet_6 guilt_6 suici_6 inte_6   ener_6 RetPsy_6 AgiPsy_6
 mood_12 insom_12 hyper_12 ApDec_12   ApInc_12 WeDec_12 WeInc_12 conct_12 guilt_12 suici_12 inte_12 ener_12 RetPy_12 AgiPy_12; 
 
