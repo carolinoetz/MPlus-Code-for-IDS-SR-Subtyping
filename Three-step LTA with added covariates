@@ -12,18 +12,16 @@ MODEL:
     c3 on c2;
     c1 on  gender;
 
-Example of how the code from supplement 11 was amended to include family history of depression: 
+Example of how the code from supplement 11 was amended to include gender: 
 
 USEVARIABLES ARE
       N1
       N2
       N3
-      Gender  
-      AgeCon
-      Fam_De;
+      Gender;
 
 MODEL:
     %OVERALL%
     c2 on c1;
     c3 on c2;
-    c1 on  gender AgeCon Fam_De; 
+    c1 on  gender; 
