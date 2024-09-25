@@ -21,6 +21,6 @@ TITLE: Latent class analysis, a dicotomous approach, on 14 IDS-SR items.
 
   MODEL:
   %OVERALL%
-  *AppInc WITH WeiInc;* !adding the residual correlation into the LCA model 
+  *AppInc_0 WITH WeiInc_0;* !adding the residual correlation into the LCA model 
 
   OUTPUT: TECH10 TECH11 TECH14; 
