@@ -2,11 +2,14 @@
   VARIABLE: 
   NAMES ARE !same as previous input files
   USEVARIABLES ARE
-mood_0 insom_0 hyper_0 AppDec_0 AppInc_0 WeiDec_0 WeiInc_0 concet_0 guilt_0 suici_0 inte_0   ener_0 RetPsy_0 AgiPsy_0
+mood_0 insom_0 hyper_0 AppDec_0 AppInc_0 WeiDec_0 WeiInc_0 concet_0 
+guilt_0 suici_0 inte_0   ener_0 RetPsy_0 AgiPsy_0
 
-mood_6 insom_6 hyper_6 AppDec_6 AppInc_6 WeiDec_6 WeiInc_6 concet_6 guilt_6 suici_6 inte_6   ener_6 RetPsy_6 AgiPsy_6
+mood_6 insom_6 hyper_6 AppDec_6 AppInc_6 WeiDec_6 WeiInc_6 concet_6 
+guilt_6 suici_6 inte_6   ener_6 RetPsy_6 AgiPsy_6
 
-mood_12 insom_12 hyper_12 ApDec_12   ApInc_12 WeDec_12 WeInc_12 conct_12 guilt_12 suici_12 inte_12 ener_12 RetPy_12 AgiPy_12;
+mood_12 insom_12 hyper_12 ApDec_12   ApInc_12 WeDec_12 WeInc_12 conct_12 
+guilt_12 suici_12 inte_12 ener_12 RetPy_12 AgiPy_12;
  
   MISSING ARE ALL (-99);
   IDVARIABLE IS id_R;
